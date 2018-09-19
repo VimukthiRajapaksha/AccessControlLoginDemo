@@ -16,4 +16,12 @@
     <servlet-name>com.acl.controller.employees</servlet-name>
     <url-pattern>/emp</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>com.acl.controller.empView</servlet-name>
+    <servlet-class>com.acl.controller.empView</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>com.acl.controller.empView</servlet-name>
+    <url-pattern>/Manage Employees-view</url-pattern>
+  </servlet-mapping>
 </web-app>

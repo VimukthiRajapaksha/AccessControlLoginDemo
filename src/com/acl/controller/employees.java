@@ -20,11 +20,8 @@ public class employees extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//System.out.println("called ");
 		employeesDao ed = new employeesDao();
-		ResultSet rs = ed.getView();
 		ResultSet rs1 = ed.getPermission(request.getParameter("username").toString(), request.getParameter("page").toString());
-		request.setAttribute("rs", rs);
 		request.setAttribute("rs1", rs1);
-		
 		RequestDispatcher rd = request.getRequestDispatcher("employees.jsp");
 		rd.forward(request, response);
 	}

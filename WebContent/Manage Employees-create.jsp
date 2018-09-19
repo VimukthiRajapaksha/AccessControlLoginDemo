@@ -21,10 +21,10 @@
 				<tr>
 					<td>user type: </td>
 					<td><select name="type">
-					  <option value="admin">Admin</option>
-					  <option value="employee">Employee</option>
-					  <option value="data entry">data entry</option>
-					  <option value="authorizer">Authorizer</option>
+					  <option value="1">Admin</option>
+					  <option value="2">Employee</option>
+					  <option value="4">data entry</option>
+					  <option value="3">Authorizer</option>
 					</select></td> 
 				</tr>
 				<tr>

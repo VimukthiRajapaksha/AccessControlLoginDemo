@@ -22,7 +22,7 @@ public class userDao {
 			ResultSet rs = st.executeQuery("SELECT * FROM user WHERE username ='"+username+"' and password ='"+password+"'");
 			
 			if(rs.next()) {
-				return rs.getString("user_type");
+				return rs.getString("role_id");
 			}
 			
 		} catch (SQLException e) {
@@ -39,12 +39,12 @@ public class userDao {
 		}*/
 		return null;
 	}
-	public HashMap<String, String> setmap(String user_type){
+	public HashMap<String, String> setmap(String role_id){
 		Statement st;
 		HashMap<String, String> func = new HashMap<>();
 		try {
 			st = con.createStatement();
-			ResultSet rs = st.executeQuery("select p.page_name, p.page_url FROM page p, user u, user_pages up WHERE p.page_id=up.page_id and u.user_id=up.user_id and u.user_type ='"+user_type+"'");
+			ResultSet rs = st.executeQuery("select p.page_name, p.page_url FROM page p, user u, user_pages up WHERE p.page_id=up.page_id and u.user_id=up.user_id and u.role_id ='"+role_id+"'");
 			while(rs.next()) {
 				func.put(rs.getString(1), rs.getString(2));
 			}

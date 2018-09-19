@@ -9,13 +9,24 @@
 </head>
 <body>
 	<center>
-		<%
-			ResultSet rs1 = (ResultSet) request.getAttribute("rs1");
-			while(rs1.next()){
-				%><a href="<%= rs1.getString("page_name")+"-"+rs1.getString("fun_url") %>"><%= rs1.getString("fun_name") %></a><br><%
-			}
-		%>
-		<a href='index.html'>Log out</a>
-		</center>
+	<table align="center">
+		<tr>
+			<th>user_id</th>
+			<th>user_name</th>
+			<th>user_type</th>
+		</tr>
+	<%
+		ResultSet rs = (ResultSet) request.getAttribute("rs");
+		while(rs.next()){
+			%>
+				<tr>
+					<td><%= rs.getString(1) %></td>
+					<td><%= rs.getString(2) %></td>
+					<td><%= rs.getString(4) %></td>
+				</tr>
+			<%
+		}
+	%>
+	</table></center>
 </body>
 </html>
