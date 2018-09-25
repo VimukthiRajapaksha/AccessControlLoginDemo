@@ -13,7 +13,7 @@ public class employeesDao {
 		ResultSet rs = null;
 		try {
 			Statement st = con.createStatement();
-			rs = st.executeQuery("select * from user");
+			rs = st.executeQuery("select u.user_id, u.username, r.role_name from user u, role r where u.role_id=r.role_id");
 			return rs;
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

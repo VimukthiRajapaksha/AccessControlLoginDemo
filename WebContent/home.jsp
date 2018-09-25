@@ -9,19 +9,22 @@
 <title>HOME</title>
 </head>
 <body>
-	<%! String username = null; %>
 	<%
-		userBean bean = (userBean)request.getAttribute("bean");
-		username = bean.getUsername();
+		if(session.getAttribute("uname")==null){
+			response.sendRedirect("index.html");
+		}
 	%>
 		<center>
-			<h1>Welcome <%= username %> !</h1>
+			<h1>Welcome ${bean.getUsername()} !</h1>
 			<c:forEach var='item' items='${bean.getFunc()}'>
-				<!--<c:out value='Key=${item.key}, Value=${item.value}'/>-->
-				<a href='${item.value}?username=${bean.getUsername()}&page=${item.value}'>${item.key}</a><br><br>
+				<form method="post" action="${item.value}">
+					<input type="hidden" name="username" value="${bean.getUsername()}">
+					<input type="hidden" name="page" value="${item.value}">
+					<input type="submit" value="${item.key}">
+				</form>
 			</c:forEach>
 		<br><br><br>
-		<a href="index.html">Log out</a>
+		<a href='logout'>Log out</a>
 		</center>
 </body>
 </html>

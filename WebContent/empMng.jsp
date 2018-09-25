@@ -1,4 +1,3 @@
-<%@page import="java.sql.ResultSet"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -38,6 +37,12 @@ th, td {
 				<td>${view.getUserid()}</td>
 				<td>${view.getUsername()}</td>
 				<td>${view.getRole_name()}</td>
+				<td>
+					<form action="Manage Employees-update" method="post">
+						<input type="hidden" name="userId" value="${view.getUserid()}">
+						<input type="submit" value="Update" />
+					</form>
+				</td>
 			</tr>
 		</c:forEach>
 	</table>

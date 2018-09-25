@@ -27,10 +27,10 @@ public class addEmployee extends HttpServlet {
 			Statement st = con.createStatement();
 			result = st.executeUpdate("insert into user values(null, '"+type+"' ,'"+username+"', '"+password+"')");
 			if(result!=0) {
-				response.getWriter().println("<script>alert('user added successfully !');</script>");
+				response.getWriter().println("<script>alert('user added successfully !'); window.history.back();</script>");
 			}
 			else {
-				response.getWriter().println("<script>alert('Sorry something went wrong, try again !');</script>");
+				response.getWriter().println("<script>alert('Sorry something went wrong, try again !'); window.history.back();</script>");
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

@@ -16,15 +16,15 @@ import com.acl.userBean.userBean;
 import com.acl.userDao.employeesDao;
 
 /**
- * Servlet implementation class empView
+ * Servlet implementation class empMng
  */
-@WebServlet("/empView")
-public class empView extends HttpServlet {
+@WebServlet("/Manage Employees-update")
+public class empMng extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		employeesDao ed = new employeesDao();
 		ResultSet rs = ed.getView();
 		
-		ArrayList<userBean> view = new ArrayList();
+		ArrayList<userBean> view = new ArrayList<userBean>();
 		
 		try {
 			while(rs.next()) {
@@ -40,6 +40,9 @@ public class empView extends HttpServlet {
 		}
 		HttpSession session = request.getSession();
 		session.setAttribute("bean", view);
-		request.getRequestDispatcher("empView.jsp").forward(request, response);
+		request.getRequestDispatcher("empMng.jsp").forward(request, response);
+	}
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		response.getWriter().print(request.getParameter("userId"));
 	}
 }

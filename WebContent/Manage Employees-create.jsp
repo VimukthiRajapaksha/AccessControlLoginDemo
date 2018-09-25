@@ -7,6 +7,11 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<%
+		if(session.getAttribute("uname")==null){
+			response.sendRedirect("index.html");
+		}
+	%>
 	<center>
 		<form action="addEmployee" method="post">
 			<table>
@@ -32,7 +37,13 @@
 				</tr>
 			</table>
 			<center><input type="submit" name="submit" value="Sumbit details"></center>
+		</form><br><br><br><br><br>
+		<form action="emp" method="post">
+			<input type="hidden" name="username" value="${uname}">
+			<input type="hidden" name="page" value="${page}">
+			<input type="submit" value="Back">
 		</form>
+		<a href='logout'>Log out</a>
 	</center>
 </body>
 </html>
