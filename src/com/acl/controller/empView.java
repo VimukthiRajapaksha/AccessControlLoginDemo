@@ -24,7 +24,7 @@ public class empView extends HttpServlet {
 		employeesDao ed = new employeesDao();
 		ResultSet rs = ed.getView();
 		
-		ArrayList<userBean> view = new ArrayList();
+		ArrayList<userBean> view = new ArrayList<userBean>();
 		
 		try {
 			while(rs.next()) {
@@ -39,7 +39,7 @@ public class empView extends HttpServlet {
 			e.printStackTrace();
 		}
 		HttpSession session = request.getSession();
-		session.setAttribute("bean", view);
+		session.setAttribute("emp_bean", view);
 		request.getRequestDispatcher("empView.jsp").forward(request, response);
 	}
 }

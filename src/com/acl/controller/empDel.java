@@ -16,11 +16,10 @@ import com.acl.userBean.userBean;
 import com.acl.userDao.employeesDao;
 
 /**
- * Servlet implementation class empMng
+ * Servlet implementation class empDel
  */
-@WebServlet("/Manage Employees-update")
-public class empMng extends HttpServlet {
-	//protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {}
+@WebServlet("/Manage Employees-delete")
+public class empDel extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		employeesDao ed = new employeesDao();
 		ResultSet rs = ed.getView();
@@ -41,25 +40,24 @@ public class empMng extends HttpServlet {
 		}
 		HttpSession session = request.getSession();
 		session.setAttribute("emp_bean", view);
-		request.getRequestDispatcher("Manage Employees-update.jsp").forward(request, response);
+		request.getRequestDispatcher("Manage Employees-delete.jsp").forward(request, response);
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		employeesDao ed = new employeesDao();
-		if(ed.getUserRole(request.getParameter("roleName").toString())==null) {
+		/*if(ed.getUserRole(request.getParameter("roleName").toString())==null) {
 			response.getWriter().println("<script>alert('Invalid user role !'); window.history.back();</script>");
 		}
 		else {
-			boolean result = new employeesDao().updateEmp(request.getParameter("userid").toString(), request.getParameter("userName").toString(), ed.getUserRole(request.getParameter("roleName").toString()));
+			boolean result = new employeesDao().deleteEmp(request.getParameter("userid").toString());
 			if(result) {
-				response.getWriter().println("<script>alert('user updated successfully !'); window.history.back();</script>");
+				response.getWriter().println("<script>alert('user deleted successfully !'); window.history.back();</script>");
 			}
 			else {
 				response.getWriter().println("<script>alert('Sorry something went wrong, try again !'); window.history.back();</script>");
 			}
-		}
-		/*
+		}*/
+		
 		System.out.println(request.getParameter("userid"));
-		System.out.println(request.getParameter("userName"));
-		System.out.println(ed.getUserRole(request.getParameter("roleName")));*/
 	}
+
 }

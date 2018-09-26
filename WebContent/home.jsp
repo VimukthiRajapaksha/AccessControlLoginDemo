@@ -15,10 +15,10 @@
 		}
 	%>
 		<center>
-			<h1>Welcome ${bean.getUsername()} !</h1>
+			<h1>Welcome ${uname} !</h1>
 			<c:forEach var='item' items='${bean.getFunc()}'>
 				<form method="post" action="${item.value}">
-					<input type="hidden" name="username" value="${bean.getUsername()}">
+					<input type="hidden" name="username" value="${uname}">
 					<input type="hidden" name="page" value="${item.value}">
 					<input type="submit" value="${item.key}">
 				</form>

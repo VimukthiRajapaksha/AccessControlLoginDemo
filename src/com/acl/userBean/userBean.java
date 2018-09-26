@@ -5,6 +5,8 @@ import java.util.HashMap;
 //u.user_id, u.username, r.role_name
 public class userBean {
 	private String username = null;
+	private String role_id = null;
+
 	private String userid = null;
 	private String role_name = null;
 	private String password = null;
@@ -14,6 +16,7 @@ public class userBean {
 	public userBean() {
 		// TODO Auto-generated constructor stub
 	}
+
 	public String getUserid() {
 		return userid;
 	}
@@ -53,6 +56,14 @@ public class userBean {
 
 	public void setFunc(HashMap<String, String> func) {
 		this.func = func;
+	}
+
+	public String getRole_id() {
+		return role_id;
+	}
+
+	public void setRole_id(String role_id) {
+		this.role_id = role_id;
 	}
 
 	public String getPassword() {

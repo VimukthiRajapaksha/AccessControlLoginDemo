@@ -1,8 +1,6 @@
 package com.acl.controller;
 
 import java.io.IOException;
-
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -22,12 +20,16 @@ public class loginServlet extends HttpServlet {
 		userDao ud = new userDao();
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
-		userBean ub = new userBean(username, password);
+		
+		
+		userBean ub = new userBean(username, ud.md5(password));
+		//userBean ub = new userBean(username, password);
 		String roleId = ud.validateUser(ub);
 		
 		if(roleId!=null) {
 			ub.setFunc(ud.setmap(roleId));
-			
+			ub.setUsername(username);
+			ub.setRole_id(roleId);
 			HttpSession session = request.getSession();
 			session.setAttribute("bean", ub);
 			session.setAttribute("uname", username);

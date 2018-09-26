@@ -33,7 +33,7 @@ th, td {
 			<th>user_name</th>
 			<th>user_type</th>
 		</tr>
-		<c:forEach items="${bean}" var="view">
+		<c:forEach items="${emp_bean}" var="view">
 			<tr>
 				<td>${view.getUserid()}</td>
 				<td>${view.getUsername()}</td>

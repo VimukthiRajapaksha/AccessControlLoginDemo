@@ -25,7 +25,7 @@ public class addEmployee extends HttpServlet {
 		Connection con = new dbconnection().getConnection();
 		try {
 			Statement st = con.createStatement();
-			result = st.executeUpdate("insert into user values(null, '"+type+"' ,'"+username+"', '"+password+"')");
+			result = st.executeUpdate("insert into user values(null, '"+type+"' ,'"+username+"', '"+new userDao().md5(password)+"')");
 			if(result!=0) {
 				response.getWriter().println("<script>alert('user added successfully !'); window.history.back();</script>");
 			}
