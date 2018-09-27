@@ -6,12 +6,30 @@ import java.util.HashMap;
 public class userBean {
 	private String username = null;
 	private String role_id = null;
+	private String email = null;
+	private String phone = null;
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getPhone() {
+		return phone;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
 
 	private String userid = null;
 	private String role_name = null;
 	private String password = null;
 	private String type = null;
-	private HashMap<String, String> func = new HashMap<String, String>();
+	private HashMap<String, String> pages = new HashMap<String, String>();
+	private HashMap<String, String> functions = new HashMap<String, String>();
 
 	public userBean() {
 		// TODO Auto-generated constructor stub
@@ -50,12 +68,20 @@ public class userBean {
 		this.username = username;
 	}
 
+	public HashMap<String, String> getFunctions() {
+		return functions;
+	}
+
+	public void setFunctions(HashMap<String, String> functions) {
+		this.functions = functions;
+	}
+
 	public void setPassword(String password) {
 		this.password = password;
 	}
 
-	public void setFunc(HashMap<String, String> func) {
-		this.func = func;
+	public void setPages(HashMap<String, String> func) {
+		this.pages = func;
 	}
 
 	public String getRole_id() {
@@ -74,7 +100,7 @@ public class userBean {
 		return username;
 	}
 
-	public HashMap<String, String> getFunc() {
-		return func;
+	public HashMap<String, String> getPages() {
+		return pages;
 	}
 }

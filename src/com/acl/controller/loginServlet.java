@@ -27,7 +27,7 @@ public class loginServlet extends HttpServlet {
 		String roleId = ud.validateUser(ub);
 		
 		if(roleId!=null) {
-			ub.setFunc(ud.setmap(roleId));
+			ub.setPages(ud.getPages(roleId));
 			ub.setUsername(username);
 			ub.setRole_id(roleId);
 			HttpSession session = request.getSession();

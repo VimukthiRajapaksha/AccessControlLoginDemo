@@ -82,12 +82,35 @@ public class userDao {
         return sb.toString();
 	}
 	
-	public HashMap<String, String> setmap(String role_id){
+	public HashMap<String, String> getPages(String role_id){
 		Statement st;
 		HashMap<String, String> func = new HashMap<>();
 		try {
 			st = con.createStatement();
 			ResultSet rs = st.executeQuery("select p.page_name, p.page_url FROM page p, user u, user_pages up WHERE p.page_id=up.page_id and u.user_id=up.user_id and u.role_id ='"+role_id+"'");
+			while(rs.next()) {
+				func.put(rs.getString(1), rs.getString(2));
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		/*finally {
+			try {
+				con.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}*/
+		return func;
+	}
+	public HashMap<String, String> getFunctions(String role_id, String page){
+		Statement st;
+		HashMap<String, String> func = new HashMap<String, String>();
+		try {
+			st = con.createStatement();
+			ResultSet rs = st.executeQuery("select fun_name, fun_url from function f, page p, page_functions pf where f.fun_id=pf.fun_id and pf.role_id='"+role_id+"' and p.page_id=pf.page_id and p.page_name='"+page+"'");
 			while(rs.next()) {
 				func.put(rs.getString(1), rs.getString(2));
 			}

@@ -1,16 +1,13 @@
 package com.acl.userDao;
 
-import java.io.IOException;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import java.util.ArrayList;
 
 import com.acl.dbconnection.dbconnection;
+import com.acl.userBean.userBean;
 
 public class employeesDao {
 	Connection con = new dbconnection().getConnection();
@@ -56,12 +53,12 @@ public class employeesDao {
 		}
 		return false;
 	}
-	public String getUserRole(String role_name){
+	public String getUserRole(String role_id){
 		String result=null;
 		Connection con = new dbconnection().getConnection();
 		try {
 			Statement st = con.createStatement();
-			ResultSet rs = st.executeQuery("select role_id from role WHERE role_name='"+role_name+"'");
+			ResultSet rs = st.executeQuery("select role_name from role WHERE role_id='"+role_id+"'");
 			if(rs.next()) {
 				result = rs.getString(1);
 				return result;
@@ -92,5 +89,50 @@ public class employeesDao {
 			e.printStackTrace();
 		}
 		return false;
+	}
+	public userBean getDetails(String user_id) {
+		userBean ub = new userBean();
+		userDao ud = new userDao();
+		Connection con = new dbconnection().getConnection();
+		ResultSet rs = null;
+		String role_id = null;
+		String username = null;
+		String email = null;
+		String phone = null;
+		try {
+			Statement st = con.createStatement();
+			rs = st.executeQuery("select username, role_id, email, phone from user WHERE user_id='"+user_id+"'");
+			if(rs.next()) {
+				username = rs.getString(1);
+				role_id = rs.getString(2);
+				email = rs.getString("email");
+				phone = rs.getString("phone");
+			}
+			ub.setRole_name(new employeesDao().getUserRole(role_id));
+			ub.setUsername(username);
+			ub.setRole_id(role_id);
+			ub.setEmail(email);
+			ub.setPhone(phone);
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return ub;
+	}
+	public ArrayList<String> getRoles() {
+		ArrayList<String> result= new ArrayList<String>();
+		Connection con = new dbconnection().getConnection();
+		try {
+			Statement st = con.createStatement();
+			ResultSet rs = st.executeQuery("select role_name from role");
+			while(rs.next()) {
+				result.add(rs.getString(1));
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return result;
 	}
 }

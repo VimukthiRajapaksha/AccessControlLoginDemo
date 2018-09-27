@@ -8,23 +8,20 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>HOME</title>
 </head>
-<body>
+<body style="background-color: powderblue; padding-top: 5%;">
 	<%
 		if(session.getAttribute("uname")==null){
 			response.sendRedirect("index.html");
 		}
 	%>
-		<center>
-			<h1>Welcome ${uname} !</h1>
-			<c:forEach var='item' items='${bean.getFunc()}'>
+			<h2>Welcome ${bean.getUsername()} !</h2>
+			<c:forEach var='item' items='${bean.getPages()}'>
 				<form method="post" action="${item.value}">
-					<input type="hidden" name="username" value="${uname}">
-					<input type="hidden" name="page" value="${item.value}">
+					<input type="hidden" name="page" value="${item.key}">
 					<input type="submit" value="${item.key}">
 				</form>
 			</c:forEach>
 		<br><br><br>
 		<a href='logout'>Log out</a>
-		</center>
 </body>
 </html>
