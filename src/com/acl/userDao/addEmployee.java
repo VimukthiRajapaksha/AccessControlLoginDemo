@@ -20,21 +20,42 @@ public class addEmployee extends HttpServlet {
 		//response.getWriter().println("called");
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
+		String email = request.getParameter("email");
+		String phone = request.getParameter("phone");
 		String type = request.getParameter("type");
 		int result = 0;
 		Connection con = new dbconnection().getConnection();
 		try {
-			Statement st = con.createStatement();
-			result = st.executeUpdate("insert into user values(null, '"+type+"' ,'"+username+"', '"+new userDao().md5(password)+"')");
+			String query = "insert into user values(null, ? , ?, ?, ?, ?)";
+			PreparedStatement ps = con.prepareStatement(query);
+			
+			ps.setObject(1, type);
+			ps.setObject(2, username);
+			ps.setObject(3, new userDao().md5(password));
+			ps.setObject(4, email);
+			ps.setObject(5, phone);
+			
+			result = ps.executeUpdate();
+
 			if(result!=0) {
-				response.getWriter().println("<script>alert('user added successfully !'); window.history.back();</script>");
+				request.setAttribute("result", true);
+				request.getRequestDispatcher("Manage Employees_create.jsp").forward(request, response);
 			}
 			else {
-				response.getWriter().println("<script>alert('Sorry something went wrong, try again !'); window.history.back();</script>");
+				request.setAttribute("result", false);
+				request.getRequestDispatcher("Manage Employees_create.jsp").forward(request, response);
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		}
+		finally {
+			try {
+				con.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 		
 	}

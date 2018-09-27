@@ -13,6 +13,8 @@
 		if(session.getAttribute("uname")==null){
 			response.sendRedirect("index.html");
 		}
+		response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
+		response.setHeader("Pragma", "no-cache");
 	%>
 			<h2>Welcome ${bean.getUsername()} !</h2>
 			<c:forEach var='item' items='${bean.getPages()}'>
@@ -22,6 +24,8 @@
 				</form>
 			</c:forEach>
 		<br><br><br>
-		<a href='logout'>Log out</a>
+		<form action="/acl/log_out_">
+			<input type="submit" value="Logout">
+		</form>
 </body>
 </html>

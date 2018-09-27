@@ -9,9 +9,11 @@
 </head>
 <body>
 	<%
-		if (session.getAttribute("uname") == null) {
+		if(session.getAttribute("uname")==null){
 			response.sendRedirect("index.html");
 		}
+		response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
+		response.setHeader("Pragma", "no-cache");
 	%>
 	<center>
 		<span>

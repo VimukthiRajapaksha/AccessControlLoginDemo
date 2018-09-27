@@ -23,7 +23,6 @@ public class loginServlet extends HttpServlet {
 		
 		
 		userBean ub = new userBean(username, ud.md5(password));
-		//userBean ub = new userBean(username, password);
 		String roleId = ud.validateUser(ub);
 		
 		if(roleId!=null) {
@@ -35,14 +34,9 @@ public class loginServlet extends HttpServlet {
 			session.setAttribute("uname", username);
 			session.setAttribute("roleId", roleId);
 			request.getRequestDispatcher("home.jsp").forward(request, response);
-			/*request.setAttribute("bean", ub);
-			RequestDispatcher rd = request.getRequestDispatcher("home.jsp");
-			rd.forward(request, response);*/
 		}
 		else {
-			response.getWriter().println("<script>alert('Invalid username or password !');</script>");
 			response.sendRedirect("index.html");
-			
 		}
 		
 	}

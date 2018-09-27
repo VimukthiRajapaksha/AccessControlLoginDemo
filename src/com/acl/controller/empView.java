@@ -34,6 +34,8 @@ public class empView extends HttpServlet {
 				bean.setUserid(rs.getString(1));
 				bean.setUsername(rs.getString(2));
 				bean.setRole_name(rs.getString(3));
+				bean.setEmail(rs.getString(4));
+				bean.setPhone(rs.getString(5));
 				view.add(bean);
 			}
 		} catch (SQLException e) {

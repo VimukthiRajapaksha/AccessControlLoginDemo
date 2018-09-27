@@ -42,6 +42,7 @@ public class employees extends HttpServlet {
 			e.printStackTrace();
 		}
 		session.setAttribute("rs1", func);
+		request.setAttribute("result", request.getAttribute("result"));
 		request.getRequestDispatcher("employees.jsp").forward(request, response);
 	}
 

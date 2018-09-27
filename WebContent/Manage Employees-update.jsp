@@ -6,6 +6,14 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+		<%
+			if(session.getAttribute("uname")==null){
+				response.sendRedirect("index.html");
+			}
+			response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
+			response.setHeader("Pragma", "no-cache");
+		%>
+
 <title>Insert title here</title>
 </head>
 <body>
@@ -15,18 +23,40 @@
 	<div style="float: right; width: 80%;">
 		<form action="${page}_update" method="post"
 			onsubmit="return confirm('Update?');">
+			<p>User id : <input type="text" name="userid" value="${user_id}" disabled></p>
 			<p>Username : <input type="text" name="username" value="${ub.getUsername()}"></p>
-			<p>User Role : <input type="text" name="user_role" value="${ub.getRole_name()}"></p>
 			<p>Email : <input type="text" name="email" value="${ub.getEmail()}"></p>
 			<p>Phone : <input type="text" name="phone" value="${ub.getPhone()}"></p>
-			
-			<select name="role">
+			<p>User Role : 
+			<select name="user_role">
 			   <c:forEach items="${roles}" var="r">
-			       <option value="${r}"><c:out value="${r}"/></option>
+			       <option value="${r}" 
+			       		<c:if test="${r==ub.getRole_name()}">
+							<c:out value="selected"></c:out>
+						</c:if>
+			       ><c:out value="${r}"/></option>
 			   </c:forEach>
-			</select>
+			</select></p>
 			<input type="submit" value="Update" />
 		</form>
+		<form action="emp" method="post">
+			<input type="hidden" name="page" value="${page}"> 
+			<input type="submit" value="Back">
+		</form>
+		<div>
+			<c:choose>
+				<c:when test="${result==true}">
+					<c:out value="user updated successfully !"></c:out>
+				</c:when>
+				<c:when test="${result==false}">
+					<c:out value="Sorry something went wrong, try again !"></c:out>
+				</c:when>
+				<c:otherwise>
+				
+				</c:otherwise>
+			</c:choose>
+		</div>
+		
 	</div>
 </body>
 </html>

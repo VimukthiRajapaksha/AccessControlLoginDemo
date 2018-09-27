@@ -7,6 +7,14 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+		<%
+			if(session.getAttribute("uname")==null){
+				response.sendRedirect("index.html");
+			}
+			response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
+			response.setHeader("Pragma", "no-cache");
+		%>
+
 <title>Insert title here</title>
 <style>
 table {
@@ -32,18 +40,22 @@ th, td {
 					<th>user_id</th>
 					<th>user_name</th>
 					<th>user_type</th>
+					<th>email</th>
+					<th>phone</th>
 				</tr>
 				<c:forEach items="${emp_bean}" var="view">
 					<tr>
 						<td>${view.getUserid()}</td>
 						<td>${view.getUsername()}</td>
 						<td>${view.getRole_name()}</td>
-						
+						<td>${view.getEmail()}</td>
+						<td>${view.getPhone()}</td>
 						<c:forEach items="${bean.getFunctions()}" var="func">
 							<c:if test="${func.key=='Delete'}">
 								<td>
 									<form action="${page}_${func.value}" method="post" onsubmit="return confirm('Delete?');">
 											<input type="hidden" name="userid" value="${view.getUserid()}">
+											<input type="hidden" name="page" value="${page}">
 											<input type="submit"value="Delete" />
 									</form>
 								</td>
@@ -57,11 +69,22 @@ th, td {
 								</td>
 							</c:if>
 						</c:forEach>
-						
 					</tr>
 				</c:forEach>
 			</table>
-			
+			<c:choose>
+				<c:when test="${result==true}">
+					<script>alert("user deleted successfully");</script>
+				</c:when>
+				<c:when test="${result==false}">
+					<script>alert("Sorry something went wrong, try again !");</script>
+				</c:when>
+			</c:choose>
+			<c:forEach items="${bean.getFunctions()}" var="func">
+				<c:if test="${func.key=='Create'}">
+					<input type = "button" onclick="window.location.href='${page}_${func.value}';" value="New User">
+				</c:if>
+			</c:forEach>
 			<%-- <br>
 			<br>
 			<br>

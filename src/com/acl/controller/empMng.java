@@ -21,39 +21,43 @@ import com.acl.userDao.employeesDao;
  */
 @WebServlet("/Manage Employees_update")
 public class empMng extends HttpServlet {
+	String userid = null;
 	//protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {}
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String userid = request.getParameter("userid");
+		this.userid = request.getParameter("userid");
 		userBean ub = new employeesDao().getDetails(userid);
 		request.setAttribute("roles", new employeesDao().getRoles());
 		request.setAttribute("ub", ub);
+		request.setAttribute("user_id", userid);
+		request.removeAttribute("uname");
 		request.getRequestDispatcher("Manage Employees-update.jsp").forward(request, response);
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		/*employeesDao ed = new employeesDao();
-		if(ed.getUserRole(request.getParameter("roleName").toString())==null) {
-			response.getWriter().println("<script>alert('Invalid user role !'); window.history.back();</script>");
+		employeesDao ed = new employeesDao();
+		String username = request.getParameter("username");
+		String role_id = ed.getRoleID(request.getParameter("user_role"));
+		String email = request.getParameter("email");
+		String phone = request.getParameter("phone");
+		
+		boolean result = ed.updateEmp(userid, username, role_id, email, phone);
+		if(result) {
+			request.setAttribute("result", true);
+			request.getRequestDispatcher("Manage Employees-update.jsp").forward(request, response);
+			//response.getWriter().println("<script>alert('user updated successfully !'); window.history.back();</script>");
 		}
 		else {
-			boolean result = new employeesDao().updateEmp(request.getParameter("userid").toString(), request.getParameter("userName").toString(), ed.getUserRole(request.getParameter("roleName").toString()));
-			if(result) {
-				response.getWriter().println("<script>alert('user updated successfully !'); window.history.back();</script>");
-			}
-			else {
-				response.getWriter().println("<script>alert('Sorry something went wrong, try again !'); window.history.back();</script>");
-			}
-		}*/
-		
-		//System.out.println(request.getParameter("userid"));
-		System.out.println(request.getParameter("username"));
-		System.out.println(request.getParameter("user_role"));
-		
-		
-		//System.out.println(ed.getUserRole(request.getParameter("roleName")));
+			request.setAttribute("result", false);
+			request.getRequestDispatcher("Manage Employees-update.jsp").forward(request, response);
+			//response.getWriter().println("<script>alert('Sorry something went wrong, try again !'); window.history.back();</script>");
 		}
 		
 		
-		
-		
+		/*System.out.println(userid);
+		System.out.println(username);
+		System.out.println(request.getParameter("user_role").toString());
+		System.out.println(role_id);
+		System.out.println(email);
+		System.out.println(phone);*/
+	}
 		
 }
