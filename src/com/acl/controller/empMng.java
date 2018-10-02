@@ -32,20 +32,19 @@ public class empMng extends HttpServlet {
 			ub = new employeesDao().getDetails(userid);
 			request.setAttribute("ub", ub);
 			request.setAttribute("user_id", userid);
-			request.removeAttribute("uname");
 			request.getRequestDispatcher("Manage Employees-update.jsp").forward(request, response);
 		} catch (SQLException e) {
-			new logger().getLogger(e.getMessage());
+			new logger().getLogger(e.getMessage(), "warn", request.getAttribute("uname").toString(), request);
 		}
 
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		employeesDao ed = new employeesDao();
+		String username = request.getParameter("username");
+		String role_id;
 		try {
-			employeesDao ed = new employeesDao();
-			String username = request.getParameter("username");
-			String role_id;
 			role_id = ed.getRoleID(request.getParameter("user_role"));
 			String email = request.getParameter("email");
 			String phone = request.getParameter("phone");
@@ -58,7 +57,7 @@ public class empMng extends HttpServlet {
 				request.getRequestDispatcher("Manage Employees-update.jsp").forward(request, response);
 			}
 		} catch (SQLException e) {
-			new logger().getLogger(e.getMessage());
+			new logger().getLogger(e.getMessage(), "warn", username, request);
 		}
 	}
 

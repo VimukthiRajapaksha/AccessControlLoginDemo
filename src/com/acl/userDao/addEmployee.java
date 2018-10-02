@@ -29,7 +29,7 @@ public class addEmployee extends HttpServlet {
 		try {
 			result = new userDao().addUser(type, username, password, email, phone);
 		} catch (NoSuchAlgorithmException | SQLException e) {
-			new logger().getLogger(e.getMessage());
+			new logger().getLogger(e.getMessage(), "warn", username, request);
 		}
 		if (result) {
 			request.setAttribute("result", true);

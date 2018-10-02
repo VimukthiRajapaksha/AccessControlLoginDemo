@@ -37,7 +37,7 @@ public class empView extends HttpServlet {
 			session.setAttribute("page", request.getParameter("page").toString());
 			request.getRequestDispatcher("empView.jsp").forward(request, response);
 		} catch (SQLException e) {
-			new logger().getLogger(e.getMessage());
+			new logger().getLogger(e.getMessage(), "warn", request.getAttribute("uname").toString(), request);
 		}
 
 	}
@@ -56,7 +56,7 @@ public class empView extends HttpServlet {
 			session.setAttribute("page", request.getParameter("page").toString());
 			request.getRequestDispatcher("empView.jsp").forward(request, response);
 		} catch (SQLException e) {
-			new logger().getLogger(e.getMessage());
+			new logger().getLogger(e.getMessage(), "warn", request.getAttribute("uname").toString(), request);
 		}
 	}
 }

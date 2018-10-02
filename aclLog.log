@@ -4,3 +4,29 @@ Oct 01, 2018 3:21:01 PM com.acl.logger.logger getLogger
 WARNING: / by zero
 Oct 01, 2018 3:21:05 PM com.acl.logger.logger getLogger
 WARNING: / by zero
+Oct 02, 2018 4:52:23 PM com.acl.logger.logger getLogger
+INFO: LOGGED IN:  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+
+Oct 02, 2018 4:56:43 PM com.acl.logger.logger getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+
+Oct 02, 2018 4:59:57 PM com.acl.logger.logger getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 192.168.1.168
+
+
+Oct 02, 2018 5:01:53 PM com.acl.logger.logger getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 192.168.1.168
+
+
+Oct 02, 2018 5:03:48 PM com.acl.logger.logger getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1----null
+Oct 02, 2018 5:08:17 PM com.acl.logger.logger getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+
+Oct 02, 2018 5:11:49 PM com.acl.logger.logger getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+

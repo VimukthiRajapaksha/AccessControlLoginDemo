@@ -23,17 +23,17 @@ public class employees extends HttpServlet {
 		String page = request.getParameter("page").toString();
 		HttpSession session = request.getSession();
 		session.setAttribute("page", page);
-		
+		String username = request.getParameter("username").toString();
 		System.out.println(session.getAttribute("roleId").toString()+"--roleId");
 		employeesDao ed = new employeesDao();
 		ArrayList<functionBean> func;
 		try {
-			func = ed.getPermission(request.getParameter("username").toString(), page);
+			func = ed.getPermission(username, page);
 			session.setAttribute("rs1", func);
 			request.setAttribute("result", request.getAttribute("result"));
 			request.getRequestDispatcher("employees.jsp").forward(request, response);
 		} catch (SQLException e) {
-			new logger().getLogger(e.getMessage());
+			new logger().getLogger(e.getMessage(), "warn", username, request);
 		}
 		
 	}

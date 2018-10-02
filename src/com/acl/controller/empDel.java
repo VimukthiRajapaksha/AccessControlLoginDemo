@@ -34,7 +34,7 @@ public class empDel extends HttpServlet {
 				request.getRequestDispatcher("emp").forward(request, response);
 			}
 		} catch (SQLException e) {
-			new logger().getLogger(e.getMessage());
+			new logger().getLogger(e.getMessage(), "warn", request.getAttribute("uname").toString(), request);
 		}
 	}
 

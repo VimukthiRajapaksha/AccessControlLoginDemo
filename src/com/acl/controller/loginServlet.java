@@ -42,6 +42,7 @@ public class loginServlet extends HttpServlet {
 				session.setAttribute("uname", username);
 				session.setAttribute("roleId", roleId);
 				session.setAttribute("roles", new employeesDao().getRoles());
+				new logger().getLogger("LOGGED IN AS : ", "info", username, request);
 				request.getRequestDispatcher("home.jsp").forward(request, response);
 			}
 			else {
@@ -49,7 +50,7 @@ public class loginServlet extends HttpServlet {
 				request.getRequestDispatcher("index.jsp").forward(request, response);
 			}
 		} catch (NoSuchAlgorithmException | SQLException | ServletException | IOException | ArithmeticException e) {
-			new logger().getLogger(e.getMessage());
+			new logger().getLogger(e.getMessage(), "warn", username, request);
 		}
 	}
 }
