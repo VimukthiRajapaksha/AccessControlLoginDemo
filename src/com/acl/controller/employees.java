@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.acl.functionBean.functionBean;
+import com.acl.logger.logger;
 import com.acl.userDao.employeesDao;
 
 //f.fun_name, f.fun_url, p.page_name
@@ -25,25 +26,16 @@ public class employees extends HttpServlet {
 		
 		System.out.println(session.getAttribute("roleId").toString()+"--roleId");
 		employeesDao ed = new employeesDao();
-		ResultSet rs1 = ed.getPermission(request.getParameter("username").toString(), page);
-		ArrayList <functionBean> func= new ArrayList<>();
-		
+		ArrayList<functionBean> func;
 		try {
-			while(rs1.next()) {
-				functionBean fb = new functionBean();
-				fb.setFun_name(rs1.getString("fun_name"));
-				fb.setFun_url(rs1.getString("fun_url"));
-				fb.setPage_name(rs1.getString("page_name"));
-				
-				func.add(fb);
-			}
+			func = ed.getPermission(request.getParameter("username").toString(), page);
+			session.setAttribute("rs1", func);
+			request.setAttribute("result", request.getAttribute("result"));
+			request.getRequestDispatcher("employees.jsp").forward(request, response);
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			new logger().getLogger(e.getMessage());
 		}
-		session.setAttribute("rs1", func);
-		request.setAttribute("result", request.getAttribute("result"));
-		request.getRequestDispatcher("employees.jsp").forward(request, response);
+		
 	}
 
 }

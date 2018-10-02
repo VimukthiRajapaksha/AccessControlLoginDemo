@@ -43,7 +43,9 @@
 				type="hidden" name="page" value="${page}"> <input
 				type="submit" value="Back">
 		</form>
-		<a href='logout'>Log out</a>
+		<form action="exit">
+			<input type="submit" value="Logout">
+		</form>
 	</center>
 </body>
 </html>

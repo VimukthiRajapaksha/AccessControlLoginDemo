@@ -1,6 +1,6 @@
 <%@page import="java.sql.ResultSet"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1" errorPage="error.jsp"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page import="com.acl.userBean.*"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -35,11 +35,22 @@ th, td {
 	</div>
 	<div style="float: right; background-color: white; width: 80%;">
 		<center>
+		<c:forEach items="${bean.getFunctions()}" var="func">
+				<c:if test="${func.key=='Create'}">
+					<input type = "button" onclick="window.location.href='${page}_${func.value}';" value="New User">
+				</c:if>
+				<c:if test="${func.key=='Search'}">
+					<form action="emp" method="get">
+						<input type="hidden" name="page" value="${page}">
+						<span><input type="text" name="keyWord"><input type="submit" value="search"></span>
+					</form>
+				</c:if>
+			</c:forEach>
 			<table align="center" border="1">
 				<tr>
 					<th>user_id</th>
 					<th>user_name</th>
-					<th>user_type</th>
+					<th>user_role</th>
 					<th>email</th>
 					<th>phone</th>
 				</tr>
@@ -80,22 +91,6 @@ th, td {
 					<script>alert("Sorry something went wrong, try again !");</script>
 				</c:when>
 			</c:choose>
-			<c:forEach items="${bean.getFunctions()}" var="func">
-				<c:if test="${func.key=='Create'}">
-					<input type = "button" onclick="window.location.href='${page}_${func.value}';" value="New User">
-				</c:if>
-			</c:forEach>
-			<%-- <br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<form action="emp" method="post">
-				<input type="hidden" name="username" value="${uname}"> <input
-					type="hidden" name="page" value="${page}"> <input
-					type="submit" value="Back">
-			</form>
-			<a href='logout'>Log out</a> --%>
 		</center>
 	</div>
 </body>

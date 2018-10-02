@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.acl.logger.logger;
 import com.acl.userBean.userBean;
 import com.acl.userDao.employeesDao;
 import com.acl.userDao.userDao;
@@ -22,32 +23,40 @@ import com.acl.userDao.userDao;
  */
 @WebServlet("/empView")
 public class empView extends HttpServlet {
-	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		employeesDao ed = new employeesDao();
 		userDao ud = new userDao();
-		ResultSet rs = ed.getView();
-		ArrayList<userBean> view = new ArrayList<userBean>();
-		
 		try {
-			while(rs.next()) {
-				userBean bean = new userBean();
-				bean.setUserid(rs.getString(1));
-				bean.setUsername(rs.getString(2));
-				bean.setRole_name(rs.getString(3));
-				bean.setEmail(rs.getString(4));
-				bean.setPhone(rs.getString(5));
-				view.add(bean);
-			}
+			ArrayList<userBean> view = ed.getView();
+			HttpSession session = request.getSession();
+			userBean b = (userBean) session.getAttribute("bean");
+			b.setFunctions(ud.getFunctions(b.getRole_id(), request.getParameter("page").toString()));
+			session.setAttribute("emp_bean", view);
+			session.setAttribute("bean", b);
+			session.setAttribute("page", request.getParameter("page").toString());
+			request.getRequestDispatcher("empView.jsp").forward(request, response);
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			new logger().getLogger(e.getMessage());
 		}
-		HttpSession session = request.getSession();
-		userBean b = (userBean) session.getAttribute("bean");
-		b.setFunctions(ud.getFunctions(b.getRole_id(), request.getParameter("page").toString()));
-		session.setAttribute("emp_bean", view);
-		session.setAttribute("bean", b);
-		session.setAttribute("page", request.getParameter("page").toString());
-		request.getRequestDispatcher("empView.jsp").forward(request, response);
+
+	}
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		employeesDao ed = new employeesDao();
+		userDao ud = new userDao();
+		try {
+			ArrayList<userBean> view = ed.getSearchView(request.getParameter("keyWord").toString());
+			HttpSession session = request.getSession();
+			userBean b = (userBean) session.getAttribute("bean");
+			b.setFunctions(ud.getFunctions(b.getRole_id(), request.getParameter("page").toString()));
+			session.setAttribute("emp_bean", view);
+			session.setAttribute("bean", b);
+			session.setAttribute("page", request.getParameter("page").toString());
+			request.getRequestDispatcher("empView.jsp").forward(request, response);
+		} catch (SQLException e) {
+			new logger().getLogger(e.getMessage());
+		}
 	}
 }

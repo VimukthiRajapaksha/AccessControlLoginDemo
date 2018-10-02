@@ -11,42 +11,18 @@ import javax.servlet.http.HttpSession;
 /**
  * Servlet implementation class log_out_Servlet
  */
-@WebServlet("/acl/log_out_")
+@WebServlet("/logout")
 public class log_out_Servlet extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public log_out_Servlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
-
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("logout called");
-		HttpSession session = request.getSession(false);
-		if(session!=null) {
-			session.removeAttribute("uname");
-			session.invalidate();
-		}
-		request.getRequestDispatcher("index.html").forward(request, response);
-	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("logout called");
-		HttpSession session = request.getSession(false);
-		if(session!=null) {
-			session.removeAttribute("uname");
-			session.invalidate();
-		}
-		request.getRequestDispatcher("index.html").forward(request, response);
+		System.out.println("logout post called");
+		request.getSession().removeAttribute("bean");
+		request.getSession().removeAttribute("uname");
+		request.getSession().removeAttribute("roleId");
+		request.getSession().removeAttribute("page");
+		request.getSession().removeAttribute("ub");
+		request.getSession().removeAttribute("roles");
+		request.getSession().invalidate();
+        response.sendRedirect(request.getContextPath() + "/index.jsp");
 	}
 
 }

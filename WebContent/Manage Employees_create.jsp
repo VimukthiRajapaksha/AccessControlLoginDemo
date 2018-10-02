@@ -5,9 +5,6 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
-</head>
-<body>
 		<%
 			if(session.getAttribute("uname")==null){
 				response.sendRedirect("index.html");
@@ -15,6 +12,13 @@
 			response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
 			response.setHeader("Pragma", "no-cache");
 		%>
+<title>Insert title here</title>
+</head>
+<body>
+	<div style="float: left; width: 20%;">
+		<jsp:include page="home.jsp" />
+	</div>
+	<div style="float: right; width: 80%;">
 	<center>
 		<form action="addEmployee" method="post">
 			<table>
@@ -36,12 +40,13 @@
 				</tr>
 				<tr>
 					<td>user type: </td>
-					<td><select name="type">
-					  <option value="1">Admin</option>
-					  <option value="2">Employee</option>
-					  <option value="4">data entry</option>
-					  <option value="3">Authorizer</option>
-					</select></td> 
+					<td>
+					<select name="type">
+					   <c:forEach items="${roles}" var="r" varStatus="s">
+					       <option value="${(s.index)+1}"><c:out value="${r}"/></option>
+					   </c:forEach>
+					</select>
+					</td> 
 				</tr>
 				<tr>
 					<td></td>
@@ -68,7 +73,7 @@
 			<input type="hidden" name="page" value="${page}">
 			<input type="submit" value="Back">
 		</form>
-		<a href='logout'>Log out</a>
 	</center>
+	</div>
 </body>
 </html>
