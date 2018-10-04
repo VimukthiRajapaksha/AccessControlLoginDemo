@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.HashMap;
 
+import javax.naming.NamingException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -39,7 +40,7 @@ public class role_create extends HttpServlet {
 			request.setAttribute("pages", pages);
 			request.setAttribute("functions", functions);
 			request.getRequestDispatcher("role_create.jsp").forward(request, response);
-		} catch (SQLException e) {
+		} catch (SQLException | NamingException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}

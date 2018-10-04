@@ -13,6 +13,9 @@ import javax.servlet.http.HttpSession;
  */
 @WebServlet("/logout")
 public class log_out_Servlet extends HttpServlet {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		System.out.println("logout get called");
+	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("logout post called");
 		request.getSession().removeAttribute("bean");

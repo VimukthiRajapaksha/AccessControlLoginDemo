@@ -23,7 +23,7 @@
 			<input type="button" value="-------" disabled>
 		</span>
 		<c:forEach items="${emp_bean}" var="view">
-				<form action="Manage Employees-delete" method="post">
+				<form action="secured/Manage Employees-delete" method="post">
 					<span>
 						<input type="text" name="User_id" value="${view.getUserid()}" disabled>
 						<input type="text" name="userName" value="${view.getUsername()}" disabled>
@@ -38,7 +38,7 @@
 		<br>
 		<br>
 		<br>
-		<form action="emp" method="post">
+		<form action="secured/employee_view" method="post">
 			<input type="hidden" name="username" value="${uname}"> <input
 				type="hidden" name="page" value="${page}"> <input
 				type="submit" value="Back">

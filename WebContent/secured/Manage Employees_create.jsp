@@ -68,7 +68,7 @@
 			</c:choose>
 		</div>
 		<br><br><br><br><br>
-		<form action="emp" method="post">
+		<form action="employee_view" method="post">
 			<input type="hidden" name="username" value="${uname}">
 			<input type="hidden" name="page" value="${page}">
 			<input type="submit" value="Back">

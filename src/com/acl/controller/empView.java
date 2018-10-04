@@ -6,6 +6,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import javax.naming.NamingException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -21,7 +22,7 @@ import com.acl.userDao.userDao;
 /**
  * Servlet implementation class empView
  */
-@WebServlet("/empView")
+@WebServlet("/secured/employee_view")
 public class empView extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -36,7 +37,7 @@ public class empView extends HttpServlet {
 			session.setAttribute("bean", b);
 			session.setAttribute("page", request.getParameter("page").toString());
 			request.getRequestDispatcher("empView.jsp").forward(request, response);
-		} catch (SQLException e) {
+		} catch (SQLException | NamingException e) {
 			new logger().getLogger(e.getMessage(), "warn", request.getAttribute("uname").toString(), request);
 		}
 
@@ -55,7 +56,7 @@ public class empView extends HttpServlet {
 			session.setAttribute("bean", b);
 			session.setAttribute("page", request.getParameter("page").toString());
 			request.getRequestDispatcher("empView.jsp").forward(request, response);
-		} catch (SQLException e) {
+		} catch (SQLException | NamingException e) {
 			new logger().getLogger(e.getMessage(), "warn", request.getAttribute("uname").toString(), request);
 		}
 	}

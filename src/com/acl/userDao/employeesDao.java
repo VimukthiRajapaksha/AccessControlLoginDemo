@@ -8,6 +8,8 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import javax.naming.NamingException;
+
 import com.acl.dbconnection.dbconnection;
 import com.acl.functionBean.functionBean;
 import com.acl.userBean.userBean;
@@ -15,12 +17,12 @@ import com.mysql.fabric.xmlrpc.base.Array;
 
 public class employeesDao {
 
-	public ArrayList<userBean> getView() throws SQLException {
+	public ArrayList<userBean> getView() throws SQLException, NamingException {
 		Connection con = new dbconnection().getConnection();
 		ResultSet rs = null;
 		ArrayList<userBean> results = new ArrayList<userBean>();
 
-		String query = "select u.user_id, u.username, r.role_name, u.email, u.phone from user u, role r where u.role_id=r.role_id";
+		String query = "select u.user_id, u.username, r.role_name, u.email, u.phone from user u, role r where u.role_id=r.role_id order by u.user_id";
 		PreparedStatement ps = con.prepareStatement(query);
 		rs = ps.executeQuery();
 		while (rs.next()) {
@@ -37,7 +39,7 @@ public class employeesDao {
 		return results;
 	}
 
-	public ArrayList<userBean> getSearchView(String key) throws SQLException {
+	public ArrayList<userBean> getSearchView(String key) throws SQLException, NamingException {
 		Connection con = new dbconnection().getConnection();
 		ResultSet rs = null;
 		ArrayList<userBean> results = new ArrayList<userBean>();
@@ -64,7 +66,7 @@ public class employeesDao {
 		return results;
 	}
 
-	public ArrayList<functionBean> getPermission(String username, String page) throws SQLException {
+	public ArrayList<functionBean> getPermission(String username, String page) throws SQLException, NamingException {
 		Connection con = new dbconnection().getConnection();
 		ResultSet rs1 = null;
 		ArrayList<functionBean> perm = new ArrayList<functionBean>();
@@ -87,7 +89,7 @@ public class employeesDao {
 	}
 
 	public boolean updateEmp(String user_id, String user_name, String role_id, String email, String phone)
-			throws SQLException {
+			throws SQLException, NamingException {
 		int result = 0;
 		Connection con = new dbconnection().getConnection();
 		String query = "UPDATE user SET role_id = ?, username = ?, email = ?, phone = ? WHERE user_id = ?";
@@ -106,7 +108,7 @@ public class employeesDao {
 		}
 	}
 
-	public String getUserRole(String role_id) throws SQLException {
+	public String getUserRole(String role_id) throws SQLException, NamingException {
 		String result = null;
 		Connection con = new dbconnection().getConnection();
 		String query = "select role_name from role WHERE role_id=?";
@@ -122,7 +124,7 @@ public class employeesDao {
 		return result;
 	}
 
-	public String getRoleID(String role_name) throws SQLException {
+	public String getRoleID(String role_name) throws SQLException, NamingException {
 		String result = null;
 		Connection con = new dbconnection().getConnection();
 		String sql = "select role_id from role WHERE role_name=?";
@@ -138,7 +140,7 @@ public class employeesDao {
 		return result;
 	}
 
-	public boolean deleteEmp(String user_id) throws SQLException {
+	public boolean deleteEmp(String user_id) throws SQLException, NamingException {
 		int result = 0;
 		Connection con = new dbconnection().getConnection();
 		String sql = "DELETE FROM user WHERE user_id=?";
@@ -153,7 +155,7 @@ public class employeesDao {
 		}
 	}
 
-	public userBean getDetails(String user_id) throws SQLException {
+	public userBean getDetails(String user_id) throws SQLException, NamingException {
 		userBean ub = new userBean();
 		Connection con = new dbconnection().getConnection();
 		ResultSet rs = null;
@@ -181,7 +183,7 @@ public class employeesDao {
 		return ub;
 	}
 
-	public ArrayList<String> getRoles() throws SQLException {
+	public ArrayList<String> getRoles() throws SQLException, NamingException {
 		ArrayList<String> result = new ArrayList<String>();
 		Connection con = new dbconnection().getConnection();
 		Statement st = con.createStatement();

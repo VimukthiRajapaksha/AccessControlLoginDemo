@@ -6,14 +6,6 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-		<%
-			if(session.getAttribute("uname")==null){
-				response.sendRedirect("index.html");
-			}
-			response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
-			response.setHeader("Pragma", "no-cache");
-		%>
-
 <title>Insert title here</title>
 </head>
 <body>
@@ -39,7 +31,7 @@
 			</select></p>
 			<input type="submit" value="Update" />
 		</form>
-		<form action="emp" method="post">
+		<form action="employee_view" method="post">
 			<input type="hidden" name="page" value="${page}"> 
 			<input type="submit" value="Back">
 		</form>

@@ -28,6 +28,7 @@
 				<c:if test="${valid_user==false}">
 					<c:out value="Invalid username or password !"></c:out>
 				</c:if>
+				<a href="https://tomcat.apache.org/tomcat-8.0-doc/jndi-datasource-examples-howto.html">connection pool</a>
 			</td>
 		</tr>
 	</table>

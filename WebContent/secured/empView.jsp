@@ -7,14 +7,6 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-		<%
-			if(session.getAttribute("uname")==null){
-				response.sendRedirect("index.html");
-			}
-			response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
-			response.setHeader("Pragma", "no-cache");
-		%>
-
 <title>Insert title here</title>
 <style>
 table {
@@ -40,7 +32,7 @@ th, td {
 					<input type = "button" onclick="window.location.href='${page}_${func.value}';" value="New User">
 				</c:if>
 				<c:if test="${func.key=='Search'}">
-					<form action="emp" method="get">
+					<form action="employee_view" method="get">
 						<input type="hidden" name="page" value="${page}">
 						<span><input type="text" name="keyWord"><input type="submit" value="search"></span>
 					</form>

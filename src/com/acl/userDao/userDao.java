@@ -10,6 +10,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.HashMap;
 
+import javax.naming.NamingException;
+
 import com.acl.dbconnection.dbconnection;
 import com.acl.userBean.userBean;
 
@@ -18,7 +20,7 @@ public class userDao {
 	private String username = null;
 	private String password = null;
 
-	public String validateUser(userBean bean) throws SQLException {
+	public String validateUser(userBean bean) throws SQLException, NamingException {
 		Connection con = new dbconnection().getConnection();
 		username = bean.getUsername();
 		password = bean.getPassword();
@@ -51,7 +53,7 @@ public class userDao {
 		return sb.toString();
 	}
 
-	public HashMap<String, String> getPages(String role_id) throws SQLException {
+	public HashMap<String, String> getPages(String role_id) throws SQLException, NamingException {
 		Connection con = new dbconnection().getConnection();
 		String sql = "select p.page_name, p.page_url FROM page p, role_pages pf WHERE p.page_id=pf.page_id and pf.role_id=?";
 		HashMap<String, String> func = new HashMap<>();
@@ -67,7 +69,7 @@ public class userDao {
 		return func;
 	}
 
-	public HashMap<String, String> getFunctions(String role_id, String page) throws SQLException {
+	public HashMap<String, String> getFunctions(String role_id, String page) throws SQLException, NamingException {
 		Connection con = new dbconnection().getConnection();
 		String sql = "select fun_name, fun_url from function f, page p, page_functions pf where f.fun_id=pf.fun_id and pf.role_id=? and p.page_id=pf.page_id and p.page_name=?";
 		HashMap<String, String> func = new HashMap<String, String>();
@@ -85,7 +87,7 @@ public class userDao {
 		return func;
 	}
 
-	public HashMap<String, String> getAllPages() throws SQLException {
+	public HashMap<String, String> getAllPages() throws SQLException, NamingException {
 		Connection con = new dbconnection().getConnection();
 		String sql = "select p.page_name, p.page_url FROM page p";
 		HashMap<String, String> func = new HashMap<>();
@@ -98,7 +100,7 @@ public class userDao {
 		return func;
 	}
 
-	public HashMap<String, String> getAllFunctions() throws SQLException {
+	public HashMap<String, String> getAllFunctions() throws SQLException, NamingException {
 		Connection con = new dbconnection().getConnection();
 		String sql = "select fun_name, fun_url from function";
 		HashMap<String, String> func = new HashMap<String, String>();
@@ -112,7 +114,7 @@ public class userDao {
 		con.close();
 		return func;
 	}
-	public boolean addUser(String type, String username, String password, String email, String phone) throws SQLException, NoSuchAlgorithmException {
+	public boolean addUser(String type, String username, String password, String email, String phone) throws SQLException, NoSuchAlgorithmException, NamingException {
 		int result = 0;
 		Connection con = new dbconnection().getConnection();
 		String query = "insert into user values(null, ? , ?, ?, ?, ?)";

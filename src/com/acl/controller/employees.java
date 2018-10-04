@@ -20,7 +20,7 @@ import com.acl.userDao.employeesDao;
 @WebServlet("/employees")
 public class employees extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String page = request.getParameter("page").toString();
+		/*String page = request.getParameter("page").toString();
 		HttpSession session = request.getSession();
 		session.setAttribute("page", page);
 		String username = request.getParameter("username").toString();
@@ -31,11 +31,11 @@ public class employees extends HttpServlet {
 			func = ed.getPermission(username, page);
 			session.setAttribute("rs1", func);
 			request.setAttribute("result", request.getAttribute("result"));
-			request.getRequestDispatcher("employees.jsp").forward(request, response);
+			request.getRequestDispatcher("secured/employees.jsp").forward(request, response);
 		} catch (SQLException e) {
 			new logger().getLogger(e.getMessage(), "warn", username, request);
 		}
-		
+		*/
 	}
 
 }

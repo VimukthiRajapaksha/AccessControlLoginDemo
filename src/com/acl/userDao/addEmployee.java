@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
 import java.sql.*;
 
+import javax.naming.NamingException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -16,7 +17,7 @@ import com.acl.logger.logger;
 /**
  * Servlet implementation class addEmployee
  */
-@WebServlet("/addEmployee")
+@WebServlet("/secured/addEmployee")
 public class addEmployee extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -28,7 +29,7 @@ public class addEmployee extends HttpServlet {
 		boolean result = false;
 		try {
 			result = new userDao().addUser(type, username, password, email, phone);
-		} catch (NoSuchAlgorithmException | SQLException e) {
+		} catch (NoSuchAlgorithmException | SQLException | NamingException e) {
 			new logger().getLogger(e.getMessage(), "warn", username, request);
 		}
 		if (result) {

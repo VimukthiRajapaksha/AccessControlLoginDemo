@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
 import java.sql.SQLException;
 
+import javax.naming.NamingException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -32,7 +33,7 @@ public class loginServlet extends HttpServlet {
 		try {
 			ub = new userBean(username, ud.md5(password));
 			String roleId = ud.validateUser(ub);
-			
+			System.out.println("valid");
 			if(roleId!=null) {
 				ub.setPages(ud.getPages(roleId));
 				ub.setUsername(username);
@@ -43,13 +44,14 @@ public class loginServlet extends HttpServlet {
 				session.setAttribute("roleId", roleId);
 				session.setAttribute("roles", new employeesDao().getRoles());
 				new logger().getLogger("LOGGED IN AS : ", "info", username, request);
-				request.getRequestDispatcher("home.jsp").forward(request, response);
+				request.getRequestDispatcher("secured/home.jsp").forward(request, response);
 			}
 			else {
+				System.out.println("not valid");
 				request.setAttribute("valid_user", false);
 				request.getRequestDispatcher("index.jsp").forward(request, response);
 			}
-		} catch (NoSuchAlgorithmException | SQLException | ServletException | IOException | ArithmeticException e) {
+		} catch (NoSuchAlgorithmException | SQLException | ServletException | IOException | ArithmeticException | NamingException e) {
 			new logger().getLogger(e.getMessage(), "warn", username, request);
 		}
 	}

@@ -6,6 +6,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import javax.naming.NamingException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -20,7 +21,7 @@ import com.acl.userDao.employeesDao;
 /**
  * Servlet implementation class empMng
  */
-@WebServlet("/Manage Employees_update")
+@WebServlet("/secured/Manage Employees_update")
 public class empMng extends HttpServlet {
 	String userid = null;
 
@@ -33,7 +34,7 @@ public class empMng extends HttpServlet {
 			request.setAttribute("ub", ub);
 			request.setAttribute("user_id", userid);
 			request.getRequestDispatcher("Manage Employees-update.jsp").forward(request, response);
-		} catch (SQLException e) {
+		} catch (SQLException | NamingException e) {
 			new logger().getLogger(e.getMessage(), "warn", request.getAttribute("uname").toString(), request);
 		}
 
@@ -56,7 +57,7 @@ public class empMng extends HttpServlet {
 				request.setAttribute("result", false);
 				request.getRequestDispatcher("Manage Employees-update.jsp").forward(request, response);
 			}
-		} catch (SQLException e) {
+		} catch (SQLException | NamingException e) {
 			new logger().getLogger(e.getMessage(), "warn", username, request);
 		}
 	}

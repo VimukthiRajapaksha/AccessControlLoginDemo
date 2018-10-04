@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
 
+import javax.naming.NamingException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -16,7 +17,7 @@ import com.acl.userDao.employeesDao;
 /**
  * Servlet implementation class empDel
  */
-@WebServlet("/Manage Employees_delete")
+@WebServlet("/secured/Manage Employees_delete")
 public class empDel extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -26,14 +27,14 @@ public class empDel extends HttpServlet {
 			if (result) {
 				request.setAttribute("page", request.getAttribute("page"));
 				request.setAttribute("result", true);
-				request.getRequestDispatcher("emp").forward(request, response);
+				request.getRequestDispatcher("employee_view").forward(request, response);
 
 			} else {
 				request.setAttribute("page", request.getAttribute("page"));
 				request.setAttribute("result", false);
-				request.getRequestDispatcher("emp").forward(request, response);
+				request.getRequestDispatcher("employee_view").forward(request, response);
 			}
-		} catch (SQLException e) {
+		} catch (SQLException | NamingException e) {
 			new logger().getLogger(e.getMessage(), "warn", request.getAttribute("uname").toString(), request);
 		}
 	}
