@@ -22,20 +22,24 @@ public class empDel extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		boolean result;
+		System.out.println("empDel servlet called");
 		try {
 			result = new employeesDao().deleteEmp(request.getParameter("userid").toString());
 			if (result) {
 				request.setAttribute("page", request.getAttribute("page"));
-				request.setAttribute("result", true);
+				request.setAttribute("Delresult", true);
 				request.getRequestDispatcher("employee_view").forward(request, response);
 
 			} else {
 				request.setAttribute("page", request.getAttribute("page"));
-				request.setAttribute("result", false);
+				request.setAttribute("Delresult", false);
 				request.getRequestDispatcher("employee_view").forward(request, response);
 			}
 		} catch (SQLException | NamingException e) {
-			new logger().getLogger(e.getMessage(), "warn", request.getAttribute("uname").toString(), request);
+			request.setAttribute("page", request.getAttribute("page"));
+			request.setAttribute("Delresult", false);
+			request.getRequestDispatcher("employee_view").forward(request, response);
+			new logger().getLogger(e.getMessage(), "warn", request.getSession().getAttribute("uname").toString(), request);
 		}
 	}
 

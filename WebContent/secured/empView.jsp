@@ -7,13 +7,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
-<style>
-/* table {
-	border-collapse: collapse;
-	width: 100%;
-} */
-</style>
+<title>Access Control</title>
 </head>
 <body>
 	<div class="container-fluid full-width ww">
@@ -58,10 +52,9 @@
 										<td>
 											<form action="${page}_${func.value}" method="post"
 												onsubmit="return confirm('Delete?');">
-												<input type="hidden" name="userid"
-													value="${view.getUserid()}"> <input type="hidden"
-													name="page" value="${page}"> <input type="submit"
-													value="Delete" class="btn btn-outline-danger"/>
+												<input type="hidden" name="userid" value="${view.getUserid()}">
+												<input type="hidden" name="page" value="${page}">
+												<input type="submit" value="Delete" class="btn btn-outline-danger"/>
 											</form>
 										</td>
 									</c:if>
@@ -79,12 +72,12 @@
 						</c:forEach>
 					</table>
 					<c:choose>
-						<c:when test="${result==true}">
+						<c:when test="${Delresult==true}">
 							<script>
 								alert("user deleted successfully");
 							</script>
 						</c:when>
-						<c:when test="${result==false}">
+						<c:when test="${Delresult==false}">
 							<script>
 								alert("Sorry something went wrong, try again !");
 							</script>

@@ -5,75 +5,113 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-		<%
-			if(session.getAttribute("uname")==null){
-				response.sendRedirect("index.html");
-			}
-			response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
-			response.setHeader("Pragma", "no-cache");
-		%>
-<title>Insert title here</title>
+<title>Access Control</title>
 </head>
 <body>
-	<div style="float: left; width: 20%;">
-		<jsp:include page="home.jsp" />
-	</div>
-	<div style="float: right; width: 80%;">
-	<center>
-		<form action="addEmployee" method="post">
-			<table>
-				<tr>
-					<td>user name: </td>
-					<td><input type="text" name="username"></td>
-				</tr>
-				<tr>
-					<td>Password: </td>
-					<td><input type="text" name="password"></td>
-				</tr>
-				<tr>
-					<td>Email: </td>
-					<td><input type="text" name="email"></td>
-				</tr>
-				<tr>
-					<td>Phone: </td>
-					<td><input type="text" name="phone"></td>
-				</tr>
-				<tr>
-					<td>user type: </td>
-					<td>
-					<select name="type">
-					   <c:forEach items="${roles}" var="r" varStatus="s">
-					       <option value="${(s.index)+1}"><c:out value="${r}"/></option>
-					   </c:forEach>
-					</select>
-					</td> 
-				</tr>
-				<tr>
-					<td></td>
-				</tr>
-			</table>
-			<center><input type="submit" name="submit" value="Sumbit details"></center>
-		</form>
-		<div>
-			<c:choose>
-				<c:when test="${result==true}">
-					<c:out value="User added successfully !"></c:out>
-				</c:when>
-				<c:when test="${result==false}">
-					<c:out value="Sorry something went wrong, try again !"></c:out>
-				</c:when>
-				<c:otherwise>
-					<c:out value=""></c:out>
-				</c:otherwise>
-			</c:choose>
+	<div class="container-fluid full-width ww">
+		<div class="row row-no-gutter">
+			<div class="col-lg-3">
+				<jsp:include page="home.jsp" />
+			</div>
+			<div class="col-lg-9" style="padding-top: 5%;">
+				<div class="card card-outline-secondary">
+					<div class="card-header">
+						<h3 class="mb-0">Add User</h3>
+					</div>
+					<div class="card-body">
+						<form action="addEmployee" method="post"
+							onsubmit="return confirm('Save?');" class="form" role="form">
+							<div class="form-group row">
+								<div class="col-lg-2"></div>
+								<div class="col-lg-8">
+									<input class="form-control" type="text" name="username"
+										value="" placeholder="username">
+								</div>
+							</div>
+							<div class="form-group row">
+								<div class="col-lg-2"></div>
+								<div class="col-lg-8">
+									<input class="form-control" type="text" name="password"
+										value="" placeholder="password">
+								</div>
+							</div>
+							<div class="form-group row">
+								<div class="col-lg-2"></div>
+								<div class="col-lg-8">
+									<input class="form-control" type="text" name="email"
+										value="" placeholder="email">
+								</div>
+							</div>
+							<div class="form-group row">
+								<div class="col-lg-2"></div>
+								<div class="col-lg-8">
+									<input class="form-control" type="text" name="phone"
+										value="" placeholder="phone">
+								</div>
+							</div>
+							<div class="form-group row">
+								<div class="col-lg-2"></div>
+								<div class="col-lg-8">
+									<select name="type" class="form-control">
+									   <c:forEach items="${roles}" var="r" varStatus="s">
+									       <option value="${(s.index)+1}"><c:out value="${r}"/></option>
+									   </c:forEach>
+									</select>
+								</div>
+							</div>
+							<div class="form-group row">
+							<div class="col-lg-5"></div>
+								<div class="col-lg-7">
+									<input class="btn btn-info" type="submit" value="Save" style="padding-left: 5%; padding-right: 5%;"/>
+								</div>
+							</div>
+						</form>
+						<div class="form-group row">
+							<div class="col-lg-5"></div>
+							<div class="col-lg-7">
+								<form action="employee_view" method="post">
+									<input type="hidden" name="page" value="${page}"> <input
+										class="btn btn-secondary" type="submit" value="Back" style="padding-left: 5%; padding-right: 5%;" />
+								</form>
+							</div>
+						</div>
+						<c:choose>
+							<c:when test="${result==true}">
+								<div class="alert alert-success" role="alert">user added
+									successfully !</div>
+							</c:when>
+							<c:when test="${result==false}">
+								<div class="alert alert-warning" role="alert">Sorry
+									something went wrong, try again !</div>
+							</c:when>
+							<c:otherwise>
+								<c:out value=""></c:out>
+							</c:otherwise>
+						</c:choose>
+					</div>
+				</div>
+			</div>
 		</div>
-		<br><br><br><br><br>
-		<form action="employee_view" method="post">
-			<input type="hidden" name="username" value="${uname}">
-			<input type="hidden" name="page" value="${page}">
-			<input type="submit" value="Back">
-		</form>
-	</center>
 	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 </body>
 </html>

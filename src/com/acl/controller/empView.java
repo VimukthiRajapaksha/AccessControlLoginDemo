@@ -38,7 +38,7 @@ public class empView extends HttpServlet {
 			session.setAttribute("page", request.getParameter("page").toString());
 			request.getRequestDispatcher("empView.jsp").forward(request, response);
 		} catch (SQLException | NamingException e) {
-			new logger().getLogger(e.getMessage(), "warn", request.getAttribute("uname").toString(), request);
+			new logger().getLogger(e.getMessage(), "warn", request.getSession().getAttribute("uname").toString(), request);
 		}
 
 	}
@@ -47,6 +47,7 @@ public class empView extends HttpServlet {
 			throws ServletException, IOException {
 		employeesDao ed = new employeesDao();
 		userDao ud = new userDao();
+		System.out.println(request.getAttribute("Delresult")+"doget empView");
 		try {
 			ArrayList<userBean> view = ed.getSearchView(request.getParameter("keyWord").toString());
 			HttpSession session = request.getSession();
@@ -54,10 +55,11 @@ public class empView extends HttpServlet {
 			b.setFunctions(ud.getFunctions(b.getRole_id(), request.getParameter("page").toString()));
 			session.setAttribute("emp_bean", view);
 			session.setAttribute("bean", b);
+			//request.setAttribute("Delresult", request.getAttribute("Delresult"));
 			session.setAttribute("page", request.getParameter("page").toString());
 			request.getRequestDispatcher("empView.jsp").forward(request, response);
 		} catch (SQLException | NamingException e) {
-			new logger().getLogger(e.getMessage(), "warn", request.getAttribute("uname").toString(), request);
+			new logger().getLogger(e.getMessage(), "warn", request.getSession().getAttribute("uname").toString(), request);
 		}
 	}
 }

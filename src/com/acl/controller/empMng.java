@@ -35,7 +35,7 @@ public class empMng extends HttpServlet {
 			request.setAttribute("user_id", userid);
 			request.getRequestDispatcher("Manage Employees-update.jsp").forward(request, response);
 		} catch (SQLException | NamingException e) {
-			new logger().getLogger(e.getMessage(), "warn", request.getAttribute("uname").toString(), request);
+			new logger().getLogger(e.getMessage(), "warn", request.getSession().getAttribute("uname").toString(), request);
 		}
 
 	}
