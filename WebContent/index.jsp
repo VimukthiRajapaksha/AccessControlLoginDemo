@@ -22,11 +22,11 @@
 					<div class="panel-body">
 						<div class="input-group input-group-lg h4 mb-4">
 							<form action="home" method="post">
-								<input type="text" name="username"
+								<input type="text" name="username" value="admin1"
 									class="form-control mb-4" placeholder="Username" /> 
 								<input
 									type="password" name="password"
-									class="form-control" placeholder="Password"
+									class="form-control" placeholder="Password" value="admin1"
 									style="margin-top: 2%; margin-bottom: 2%;" />
 								<input
 									type="submit" name="submit" value="Sign In"
@@ -37,6 +37,9 @@
 							<c:if test="${valid_user==false}">
 								<div class="alert alert-warning" role="alert">Invalid
 									username or password !</div>
+							</c:if>
+							<c:if test="${not empty timeoutErr}">
+								<div class="alert alert-warning" role="alert">${timeoutErr}</div>
 							</c:if>
 						</div>
 					</div>

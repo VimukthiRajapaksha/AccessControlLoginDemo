@@ -9,28 +9,12 @@
   <!-- <error-page>
     <error-code>404</error-code>
     <location>/error.jsp</location>
-  </error-page>
-  <error-page>
+  </error-page> -->
+  <!-- <error-page>
     <error-code>500</error-code>
-    <location>/logout</location>
+    <location>/logout?timeout=1</location>
   </error-page> -->
   <session-config>
-    <session-timeout>15</session-timeout>
+    <session-timeout>1</session-timeout>
   </session-config>
-  <servlet>
-    <servlet-name>com.acl.controller.loginServlet</servlet-name>
-    <servlet-class>com.acl.controller.loginServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>com.acl.controller.loginServlet</servlet-name>
-    <url-pattern>/home</url-pattern>
-  </servlet-mapping>
-  <!-- <servlet>
-    <servlet-name>com.acl.controller.empView</servlet-name>
-    <servlet-class>com.acl.controller.empView</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>com.acl.controller.empView</servlet-name>
-    <url-pattern>/secured/employee_view</url-pattern>
-  </servlet-mapping> -->
 </web-app>
