@@ -312,3 +312,468 @@ INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
 Oct 10, 2018 3:40:13 PM com.acl.util.logfile.LogFile getLogger
 INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
 
+Oct 10, 2018 4:10:57 PM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 10, 2018 4:12:30 PM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 10, 2018 4:14:10 PM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 10, 2018 4:15:27 PM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 10, 2018 4:35:32 PM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 10, 2018 4:35:34 PM com.acl.util.logfile.LogFile getLogger
+WARNING: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''5' offset '0'' at line 1 USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 10, 2018 4:36:57 PM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 10, 2018 4:37:19 PM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 10, 2018 4:38:47 PM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 10, 2018 4:42:43 PM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 10, 2018 4:44:21 PM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 10, 2018 4:50:00 PM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 10, 2018 4:51:08 PM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 10, 2018 4:51:43 PM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 10, 2018 4:52:33 PM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 10, 2018 4:53:29 PM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 10, 2018 4:54:04 PM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 10, 2018 5:03:09 PM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 10, 2018 5:03:31 PM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 10, 2018 5:09:35 PM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 10, 2018 5:13:16 PM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 10, 2018 5:13:39 PM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 10, 2018 5:14:16 PM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 10, 2018 5:18:18 PM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 10, 2018 5:20:17 PM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 10, 2018 5:21:32 PM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 10, 2018 5:23:20 PM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 10, 2018 5:28:16 PM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 8:47:17 AM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 8:49:19 AM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 8:52:38 AM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 8:54:21 AM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 8:56:22 AM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 8:57:22 AM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 8:58:25 AM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 9:02:34 AM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 9:03:31 AM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 9:07:12 AM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 9:08:22 AM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 9:15:01 AM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 9:15:38 AM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 9:18:41 AM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 9:18:44 AM com.acl.util.logfile.LogFile getLogger
+WARNING: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '-7' at line 1 USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 9:19:48 AM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 9:19:54 AM com.acl.util.logfile.LogFile getLogger
+WARNING: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '-4' at line 1 USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 9:25:32 AM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 9:27:00 AM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 9:29:21 AM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 9:31:41 AM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 9:33:44 AM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 9:33:47 AM com.acl.util.logfile.LogFile getLogger
+WARNING: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '-14' at line 1 USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 9:36:16 AM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 9:39:01 AM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 9:39:49 AM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 9:44:40 AM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 9:48:21 AM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 9:54:48 AM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 10:00:36 AM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 10:01:47 AM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 10:02:54 AM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 10:03:28 AM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 10:05:13 AM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 10:09:29 AM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 10:10:31 AM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 10:11:37 AM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 10:12:45 AM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 10:13:16 AM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 10:15:02 AM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 10:16:11 AM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 10:16:59 AM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 10:19:43 AM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 10:25:08 AM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 10:26:12 AM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 10:28:08 AM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 10:35:17 AM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 10:38:34 AM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 10:44:00 AM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 10:44:51 AM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 10:45:38 AM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 10:47:15 AM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 10:48:20 AM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 10:51:56 AM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 10:55:49 AM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 10:58:56 AM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 11:01:23 AM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 11:04:57 AM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 11:13:21 AM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 11:13:47 AM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 11:14:34 AM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 11:18:14 AM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 1:14:25 PM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 1:15:47 PM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 1:16:43 PM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 1:20:36 PM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 1:21:03 PM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 1:23:05 PM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 1:24:12 PM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 1:26:08 PM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 1:28:50 PM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 1:30:05 PM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 1:30:34 PM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 1:31:44 PM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 1:35:00 PM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 1:36:11 PM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 1:43:35 PM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 1:49:17 PM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 1:50:12 PM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 1:51:14 PM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 1:52:10 PM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 1:54:30 PM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 2:06:16 PM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 2:06:55 PM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 2:10:46 PM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 2:11:40 PM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 2:14:40 PM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 2:17:30 PM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 2:18:17 PM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 2:23:24 PM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 2:24:49 PM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 2:28:36 PM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 2:29:46 PM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 2:32:21 PM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 2:33:43 PM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 2:35:40 PM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 2:37:06 PM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 2:38:37 PM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 2:41:08 PM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 2:42:16 PM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 2:43:44 PM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 2:44:25 PM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 2:46:25 PM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 2:47:57 PM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 2:52:13 PM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 2:56:55 PM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 2:57:27 PM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 3:03:06 PM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 3:14:04 PM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 3:20:35 PM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 3:59:32 PM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 4:01:40 PM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 4:03:20 PM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 4:14:23 PM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 4:15:17 PM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 4:16:56 PM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 4:19:02 PM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 4:49:24 PM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 4:50:40 PM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 4:54:06 PM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 4:55:57 PM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 5:09:04 PM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 5:15:14 PM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 5:16:49 PM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 5:19:01 PM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 5:25:36 PM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+
+Oct 11, 2018 5:26:43 PM com.acl.util.logfile.LogFile getLogger
+INFO: LOGGED IN AS :  USERNAME: admin1 IP ADDRESS: 0:0:0:0:0:0:0:1
+

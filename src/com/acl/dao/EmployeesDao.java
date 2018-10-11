@@ -16,14 +16,19 @@ import com.acl.util.connection.DBConnection;
 public class EmployeesDao {
 
 	public ArrayList<UserBean> getView() throws SQLException, NamingException {
+		return getView(7, 0);
+	}
+	public ArrayList<UserBean> getView(int limit, int offset) throws NamingException, SQLException{
 		Connection con = null;
 		ResultSet rs = null;
 		ArrayList<UserBean> results = new ArrayList<UserBean>();
 		
 		try {
 			con = new DBConnection().getConnection();
-			String query = "select u.user_id, u.username, r.role_name, u.email, u.phone from user u, role r where u.role_id=r.role_id order by u.user_id";
+			String query = "select u.user_id, u.username, r.role_name, u.email, u.phone from user u, role r where u.role_id=r.role_id order by u.user_id limit ? offset ?";
 			PreparedStatement ps = con.prepareStatement(query);
+			ps.setObject(1, limit);
+			ps.setObject(2, offset);
 			rs = ps.executeQuery();
 			while (rs.next()) {
 				UserBean ub = new UserBean();
@@ -40,15 +45,32 @@ public class EmployeesDao {
 				con.close();
 			}
 		}
-
 		return results;
 	}
-
+	public String getEmpCount() throws NamingException, SQLException{
+		Connection con = null;
+		String query = "select count(user_id) from user";
+		ResultSet rs = null;
+		String count = null;
+		try {
+			con = new DBConnection().getConnection();
+			PreparedStatement ps = con.prepareStatement(query);
+			rs = ps.executeQuery();
+			if(rs.next()) {
+				count = rs.getString(1);
+			}
+		} finally {
+			if(con!=null) {
+				con.close();
+			}
+		}
+		return count;
+	}
 	public ArrayList<UserBean> getSearchView(String key) throws SQLException, NamingException {
 		Connection con = null;
 		ResultSet rs = null;
 		ArrayList<UserBean> results = new ArrayList<UserBean>();
-		
+
 		try {
 			con = new DBConnection().getConnection();
 			String query = "select u.user_id, u.username, r.role_name, u.email, u.phone from user u, role r where (u.user_id like ? or u.username like ? or r.role_name like ? or u.email like ? or u.phone like ?) and (u.role_id=r.role_id)";
