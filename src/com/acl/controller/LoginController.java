@@ -27,32 +27,62 @@ public class LoginController extends HttpServlet {
 	 */
 	private static final long serialVersionUID = 1L;
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response){
-		UserDao ud = new UserDao();
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+		try {
+			redirectToHome(request, response);
+		} catch (NoSuchAlgorithmException | SQLException | NamingException | ServletException | IOException e) {
+			new LogFile().getLogger(e.getMessage(), "warn", "no user name", request);
+			String error = e.getMessage() + "(" + e.getClass().toString() + ")";
+			request.setAttribute("error", error);
+			request.getRequestDispatcher("../error.jsp").forward(request, response);
+		}
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		try {
+			redirectToHome(request, response);
+		} catch (NoSuchAlgorithmException | SQLException | NamingException | ServletException | IOException e) {
+			new LogFile().getLogger(e.getMessage(), "warn", "no user name", request);
+			String error = e.getMessage() + "(" + e.getClass().toString() + ")";
+			request.setAttribute("error", error);
+			request.getRequestDispatcher("../error.jsp").forward(request, response);
+		}
+	}
+
+	private void redirectToHome(HttpServletRequest request, HttpServletResponse response) throws NoSuchAlgorithmException, SQLException, NamingException, ServletException, IOException {
+		HttpSession session = request.getSession();
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
-		UserBean ub;
+		String roleId = (String) session.getAttribute("roleId");
+		String uname = (String) session.getAttribute("uname");
+		UserDao ud = new UserDao();
+		UserBean ub = null;
 		
-		try {
+		if(username!=null && password!=null) {
 			ub = new UserBean(username, ud.md5(password));
-			String roleId = ud.validateUser(ub);
+			roleId = ud.validateUser(ub);
 			if(roleId!=null) {
 				ub.setPages(ud.getPages(roleId));
 				ub.setUsername(username);
 				ub.setRole_id(roleId);
-				HttpSession session = request.getSession();
-				session.setAttribute("bean", ub);
 				session.setAttribute("uname", username);
 				session.setAttribute("roleId", roleId);
-				session.setAttribute("roles", new EmployeesDao().getRoles());
+				request.setAttribute("bean", ub);
+				request.setAttribute("roles", new EmployeesDao().getRoles());
 				new LogFile().getLogger("LOGGED IN AS : ", "info", username, request);
 				request.getRequestDispatcher("WEB-INF/view/home.jsp").forward(request, response);
 			}else {
 				request.setAttribute("valid_user", false);
 				request.getRequestDispatcher(request.getContextPath() + "/index.jsp").forward(request, response);
 			}
-		} catch (NoSuchAlgorithmException | SQLException | ServletException | IOException | ArithmeticException | NamingException e) {
-			new LogFile().getLogger(e.getMessage(), "warn", username, request);
+		}else if(uname!=null && roleId!=null) {
+			ub = new UserBean();
+			ub.setPages(ud.getPages(roleId));
+			ub.setUsername(username);
+			ub.setRole_id(roleId);
+			request.setAttribute("bean", ub);
+			request.setAttribute("roles", new EmployeesDao().getRoles());
+			request.getRequestDispatcher("WEB-INF/view/home.jsp").forward(request, response);
 		}
 	}
 }

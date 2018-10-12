@@ -21,10 +21,7 @@ public class LogoutController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		int timeout = Integer.parseInt(request.getParameter("timeout"));
-		timeout=1;
-		System.out.println("doget logout called !");
-		System.out.println(request.getContextPath()+"/index.jsp");
-		//request.getSession().invalidate();
+		timeout = 1;
 		if (timeout == 1)
 			request.setAttribute("timeoutErr", "Session has time out !");
 		request.getRequestDispatcher("/index.jsp").forward(request, response);

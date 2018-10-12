@@ -45,7 +45,6 @@ public class PrintController extends HttpServlet {
 		String offset = request.getParameter("offset");
 		String page = session.getAttribute("page").toString();
 		boolean saveResult = false;
-		System.out.println(type);
 		if(limit==null || Integer.parseInt(limit) <= 0 ) {
 			limit = "7";
 		}
@@ -92,27 +91,6 @@ public class PrintController extends HttpServlet {
 			request.setAttribute("excelResult", false);
 			request.getRequestDispatcher("employee").forward(request, response);
 		}
-		
-		/*try {
-			excelResult = px.printToExcel(limit, offset);
-			if(excelResult) {
-				request.setAttribute("page", page);
-				request.setAttribute("excelResult", true);
-				request.setAttribute("limit", limit);
-				request.setAttribute("offset", offset);
-				request.getRequestDispatcher("employee").forward(request, response);
-			}
-			else {
-				request.setAttribute("page", page);
-				request.setAttribute("limit", limit);
-				request.setAttribute("offset", offset);
-				request.setAttribute("excelResult", false);
-				request.getRequestDispatcher("employee").forward(request, response);
-			}
-		} catch (NumberFormatException | WriteException | NamingException | SQLException e) {
-			System.out.println(e.getClass()+e.getMessage());
-		}*/
-		
 	}
 	private boolean toExcel(String limit, String offset) throws NumberFormatException, WriteException, IOException, NamingException, SQLException {
 		boolean excelResult = false;

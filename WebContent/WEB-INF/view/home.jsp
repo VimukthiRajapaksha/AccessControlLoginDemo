@@ -16,11 +16,11 @@
 <body>
 	<div class="bg-info" style="height: 100vh;">
 	<c:set var="context" value="${pageContext.request.contextPath}" />
-		<h3 style="padding-top: 5%;"class="text-center font-weight-bold text-white">welcome ${bean.getUsername()} !</h3><hr>
+		<h3 style="padding-top: 5%;"class="text-center font-weight-bold text-white">welcome ${uname} !</h3><hr>
 			 <c:forEach var='item' items='${bean.getPages()}'>
 				<form method="post" action="${pageContext.request.contextPath}/secure/${item.value}" class="form-inline">
-					<input type="hidden" name="page" value="${item.value}" /> <input
-						type="submit" value="${item.key}" class="btn btn-info btn-block text-left">
+					<input type="hidden" name="page" value="${item.value}" /> 
+					<input type="submit" value="${item.key}" class="btn btn-info btn-block text-left">
 				</form>
 			</c:forEach>
 			<form action="${context}/logout" method="post">

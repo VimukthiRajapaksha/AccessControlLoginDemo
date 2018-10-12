@@ -118,24 +118,16 @@
 						</script>
 					</c:when>
 				</c:choose>
-				<c:set value="${pageNo-1}" var="pNo"></c:set>
-				<c:if test="${pNo<=1}">
-					<c:set value="1" var="pNo"></c:set>
-				</c:if>
-				<c:set value="${count/limit}" var="pageCount"></c:set>
-				<fmt:formatNumber value="${pageCount + ( 1 - (pageCount%1)) % 1}"
-					var="pageAsInt" maxFractionDigits="0" />
-				<nav>
 				<ul class="pagination justify-content-center">
 					<li class="page-item"><a class="page-link"
-						href="employee?limit=${limit}&offset=${(pNo - 1) * limit}"
+						href="employee?pageNo=${pageNo-1}&limit=${limit}&offset=${(pageNo - 2) * limit}"
 						tabindex="-1">Previous</a></li>
-					<c:forEach begin="0" end="${pageCount}" varStatus="loop">
+					<c:forEach begin="0" end="${pageCount-1}" varStatus="loop">
 						<li class="page-item"><a class="page-link"
 							href="employee?pageNo=${loop.index+1}&limit=${limit}&offset=${loop.index*limit}">${loop.index+1}</a></li>
 					</c:forEach>
 					<c:choose>
-						<c:when test="${pageNo<pageAsInt}">
+						<c:when test="${pageNo<pageCount}">
 							<li class="page-item"><a class="page-link"
 								href="employee?pageNo=${pageNo+1}&limit=${limit}&offset=${ pageNo*limit }">Next</a></li>
 						</c:when>
@@ -145,14 +137,14 @@
 						</c:when>
 						<c:otherwise>
 							<li class="page-item"><a class="page-link"
-								href="employee?pageNo=${pageAsInt}&limit=${limit}&offset=${ (pageAsInt-1) * limit }">Next</a></li>
+								href="employee?pageNo=${pageNo+1}&limit=${limit}&offset=${ (pageCount-1) * limit }">Next</a></li>
 						</c:otherwise>
 					</c:choose>
 
 				</ul>
 				</nav>
 				<div class="pagination justify-content-center">${count}
-					Results - ${pageNo}/${pageAsInt} Pages</div>
+					Results - ${pageNo}/${pageCount} Pages</div>
 			</div>
 			<p></p>
 		</div>

@@ -39,10 +39,10 @@ public class EmpDeleteController extends HttpServlet {
 				request.getRequestDispatcher("employee").forward(request, response);
 			}
 		} catch (SQLException | NamingException e) {
-			request.setAttribute("page", request.getAttribute("page"));
-			request.setAttribute("Delresult", false);
-			request.getRequestDispatcher("employee").forward(request, response);
 			new LogFile().getLogger(e.getMessage(), "warn", request.getSession().getAttribute("uname").toString(), request);
+			String error = e.getMessage() + "(" + e.getClass().toString() + ")";
+			request.setAttribute("error", error);
+			request.getRequestDispatcher("../error.jsp").forward(request, response);
 		}
 	}
 
